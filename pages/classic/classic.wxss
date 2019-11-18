@@ -1,0 +1,10 @@
+/* pages/fashion/fashion.wxss */
+.like{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start  
+}
+.likeNumber{
+  font-size: 24rpx;
+  display: block;
+}

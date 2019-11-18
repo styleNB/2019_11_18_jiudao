@@ -1,0 +1,6 @@
+<!--pages/fashion/fashion.wxml-->
+<view class="like" bind:tap="onLike">
+  <text wx:if="{{ !like }}" class="iconfont icon-icon--"></text>
+  <text wx:if="{{ like }}" class="iconfont icon-xihuanlike"></text>
+  <text class="likeNumber">{{ likeNumber }}</text>
+</view>

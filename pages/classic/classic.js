@@ -1,18 +1,34 @@
 // pages/fashion/fashion.js
+import { ClassicModel } from '../../models/classic.js'
+const classic = new ClassicModel()
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    like: false,
+    likeNumber: 1,
+    api:{
 
+    }
+  },
+
+  onLike () {
+    this.setData({
+      like: !this.data.like,
+      likeNumber: !this.data.like ? this.data.likeNumber + 1 : this.data.likeNumber - 1
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    classic.getLatest((res) => {
+      console.log(res)
+    })
   },
 
   /**
