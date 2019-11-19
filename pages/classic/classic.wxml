@@ -4,3 +4,8 @@
   <text wx:if="{{ like }}" class="iconfont icon-xihuanlike"></text>
   <text class="likeNumber">{{ likeNumber }}</text>
 </view>
+
+
+<view>
+  
+</view>

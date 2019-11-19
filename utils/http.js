@@ -10,10 +10,24 @@ class HTTP{
         'content-type': 'application/json',
       },
       success: (res) => {
-        params.success(res)
+        if (res.statusCode.toString().startsWith('2')) {
+          params.success(res)
+        } else {
+          wx.showToast({
+            title: '请检查网络',
+            icon: 'none',
+            mask: true,
+            duration: 2000
+          })
+        }
       },
       fail: (err) => {
-        // params.fail(err)
+        wx.showToast({
+          title: '请检查网络',
+          icon: 'none',
+          mask: true,
+          duration: 2000
+        })
       }
     })
   }
