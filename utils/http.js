@@ -13,7 +13,7 @@ class HTTP{
         params.success(res)
       },
       fail: (err) => {
-        params.fail(err)
+        // params.fail(err)
       }
     })
   }
