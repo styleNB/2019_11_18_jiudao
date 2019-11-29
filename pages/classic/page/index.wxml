@@ -1,0 +1,3 @@
+<!--pages/classic/page/index.wxml-->
+<button bind:tap="onPrevious">上一个</button>
+<button bind:tap="onNext">下一个</button>

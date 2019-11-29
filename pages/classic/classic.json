@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "movie-cmp": "/pages/classic/movie/index",
+    "page-cmp": "/pages/classic/page/index"
+  }
 }

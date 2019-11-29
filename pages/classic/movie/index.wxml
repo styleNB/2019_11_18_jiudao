@@ -1,0 +1,5 @@
+<!--pages/classic/movie/index.wxml-->
+<image src="{{ image }}"></image>
+<text>{{ name }}</text>
+<text>{{ idi }}</text>
+<image src="/images/Accountnumber@2x.png"></image>

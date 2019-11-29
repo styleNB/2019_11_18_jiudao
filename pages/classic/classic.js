@@ -10,9 +10,8 @@ Page({
   data: {
     like: false,
     likeNumber: 1,
-    api:{
-
-    }
+    list: {},
+    page: 0,
   },
 
   onLike () {
@@ -22,15 +21,41 @@ Page({
     })
   },
 
+  onPrevious() {
+    let page = this.data.page - 1
+    classic.getPrevious(page, (res) => {
+      this.setData({
+        page: page,
+        list: res
+      })
+      console.log('previous', res)
+    })
+  },
+  onNext () {
+    let page = this.data.page + 1
+    classic.getNext(page, (res) => {
+      this.setData({
+        page: page,
+        list: res
+      })
+      console.log('next', res)
+    })
+  },
+  
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    classic.getLatest((res) => {
-      console.log(res)
+    let page = this.data.page
+    classic.getLatest(page, (res) => {
+      this.setData({
+        list: res
+      })
+      console.log('this.data.list.id', this.data.list.id)
     })
   },
-
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

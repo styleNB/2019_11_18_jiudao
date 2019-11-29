@@ -5,7 +5,6 @@
   <text class="likeNumber">{{ likeNumber }}</text>
 </view>
 
+<movie-cmp image="{{ list.src }}" name="{{ list.name }}" idi="{{ list.id }}"/>
 
-<view>
-  
-</view>
+<page-cmp  bind:next="onNext" bind:previous="onPrevious"/>
