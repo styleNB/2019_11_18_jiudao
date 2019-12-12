@@ -1,2 +1,7 @@
 <!--pages/classic/music/index.wxml-->
-<text>pages/classic/music/index.wxml</text>
+<view hidden="{{ hidden }}">
+  <image src="{{ image }}"></image>
+  <text>{{ name }}</text>
+  <text>{{ idi }}</text>
+  <image src="/images/Displaypassword@2x.png"></image>
+</view>

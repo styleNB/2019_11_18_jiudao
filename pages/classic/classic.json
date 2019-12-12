@@ -1,6 +1,8 @@
 {
   "usingComponents": {
     "movie-cmp": "/pages/classic/movie/index",
+    "music-cmp": "/pages/classic/music/index",
+    "essay-cmp": "/pages/classic/essay/index",
     "page-cmp": "/pages/classic/page/index"
   }
 }

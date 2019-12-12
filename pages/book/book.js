@@ -1,6 +1,13 @@
-// pages/fashion/fashion.js
-import { ClassicModel } from '../../models/classic.js'
-const classic = new ClassicModel()
+// pages/book/book.js
+import { BookMode } from '../../models/book.js'
+const bookMode = new BookMode() 
+
+let func = 'aaa'
+const ppp = function (func) {
+  return function (params = {}){
+    console.log('params', params)
+  }
+}
 
 Page({
 
@@ -8,51 +15,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    like: false,
-    likeNumber: 1,
-    list: {},
-    page: 0,
-  },
 
-  onLike () {
-    this.setData({
-      like: !this.data.like,
-      likeNumber: !this.data.like ? this.data.likeNumber + 1 : this.data.likeNumber - 1
-    })
   },
-
-  onPrevious() {
-    let page = this.data.page - 1
-    classic.getPrevious(page, (res) => {
-      this.setData({
-        page: page,
-        list: res
-      })
-    })
-  },
-  onNext () {
-    let page = this.data.page + 1
-    classic.getNext(page, (res) => {
-      this.setData({
-        page: page,
-        list: res
-      })
-    })
-  },
-  
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let page = this.data.page
-    classic.getLatest(page, (res) => {
-      this.setData({
-        list: res
+    bookMode.getHotList()
+      .then((res) => {
+        console.log('结果1',res)
+        return bookMode.getHotList()
       })
-    })
+      .then((res) => {
+        console.log('结果2', res)
+        return bookMode.getHotList()
+      })
+      .then((res) => { console.log('结果3', res) })
+
+
+    ppp()
+
   },
-  
+
+ 
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

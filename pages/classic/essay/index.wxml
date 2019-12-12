@@ -1,3 +1,7 @@
 <!--pages/classic/essay/index.wxml-->
-<text>pages/classic/essay/index.wxml</text>
-111
+<view hidden="{{ hidden }}">
+  <image src="{{ image }}"></image>
+  <text>{{ name }}</text>
+  <text>{{ idi }}</text>
+  <image src="/images/Hiddenpassword@2x.png"></image>
+</view>

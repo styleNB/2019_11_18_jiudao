@@ -33,6 +33,7 @@ class ClassicModel extends HTTP {
       url: '/list',
       success: (res) => {
         sCallback(res.data[page])
+        console.log(res)
         try { wx.setStorageSync(this._getKey(page), res.data[page]) } catch (err) { console.error('setStorageSync失败', err) }
       }
     })
